@@ -7,7 +7,7 @@ It is difficult to visit each and every website for comparing the deals or a pri
 
 In this way, shoppers can compare prices, and service from multiple retailers on a single page and choose the merchant that offers the best overall value. Users need to open the website and search for a particular product. This will make easy shopping with best deals as well as ecommerce merchants to know well about their competitors.
 
-OBJECTIVES
+Objectives
 - To save the time required to visit each website individually.
 - To create an easy-to-use web application for buyers to find best quality products at the appropriate price.
 - Finding the best deals on items.
