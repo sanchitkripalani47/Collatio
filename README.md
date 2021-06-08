@@ -15,7 +15,7 @@ Objectives
 - To make it convenient for the buyers as all the information will be present at one location, thus making comparing prices, reviews and product details much easier.
 - Providing wide variety of products and choices available for the user on a single platform.
 
-Software and Hardware Requirements
+Software Used
 - Python libraries for web scraping and data analysis like beautiful soup and pandas.
 - Web technology like HTML, CSS, Django and JavaScript.
 - Database - PostgreSQL
