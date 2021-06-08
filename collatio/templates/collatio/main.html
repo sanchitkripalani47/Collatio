@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 {% load static %}
+
+<style>
+body{
+  overflow-x:hidden;
+}
+</style>
+
 <html>
     <head>
         <title>Collatio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <img src="{% static '/images/logo.png' %}" id="logo">
-            <a class="navbar-brand" href="{% url 'home' %}">Collatio</a>
+            <img src="{% static '/images/logo2.png' %}" id="logo">
+            <a class="navbar-brand" style="font-family: Merienda;" href="{% url 'home' %}">Collatio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,8 +32,9 @@
                     <a class="nav-link" href="{% url 'category' %}">Categories<span class="sr-only"></span></a>
                   </li>
               </ul>
-              <form class="form-inline my-4 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <form class="form-inline my-4 my-lg-0" method="GET" action="{% url 'all_products' %}">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" 
+                aria-label="Search" name='search_bar' id='search_bar'>
                 <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #c9c9c9;
+  font-family: "Poppins" , sans-serif;
+}
+
+.navigation{
+  padding: 5px !important;
+}
+
+.product-link{
+  color:white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.background {
+  height: 100vh;
+  width: 150%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: -11;
+  background: linear-gradient(to bottom , #537b98b4, #044ba0);
+  clip-path: circle(60% at 90%);
+}
+
+  .product-card {
+  width: 1000px;
+  display: flex;
+  background: white;
+  box-shadow: 0 0 8px #000;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.product-card .left-column {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card .left-column img {
+  width: 80%;
+  transition: 0.3s ease;
+}
+.product-card .right-column {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem ;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.product-card .right-column .product-name {
+  
+  font-weight: bold;
+  
+}
+.product-card .right-column h3{
+  align-items:right;
+}
+.product-card .right-column .product-name h1 {
+  
+  font-size: 2.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.product-card .right-column .price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.product-card .right-column .colors {
+  display: flex;
+}
+
+
+.product-card .right-column .btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: linear-gradient(to right ,  #248dd8d4, #044ba0);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding: 2px 10px 2px 10px;
+  text-align:center;
+  text-decoration: none;
+}
+
+.product-card .right-column .btn:hover {
+  box-shadow: 0 0 6px #000;
+}
+.product-card:hover{
+  box-shadow: 0 0 20px #000;
+}
+@media screen and (max-width:830px) {
+  .product-card {
+    width: 400px;
+    height: 570px;
+    flex-direction: column;
+  }
+  .product-card .left-column {
+    width: 100%;
+  }
+  .product-card .left-column img {
+    width: 60%;
+  }
+  .product-card .right-column {
+    width: 100%;
+  }
+
+  .product-card .right-column .btn {
+    font-size: 1.2rem;
+  }
+  
+}
+@media screen and (max-width:400px) {
+  .product-card {
+    width: 300px;
+    height: 520px;
+  }
+  
+}
+
+@media screen and (max-width:320px) {
+  .product-card {
+    width: 280px;
+    height: 530px;
+  }
+}

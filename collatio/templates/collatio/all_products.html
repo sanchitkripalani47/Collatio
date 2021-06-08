@@ -5,67 +5,14 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/card.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script> -->
 
 <br>
 
-<!--Sorting by search items part-->
-<style>
-    .searched-items {
-        padding-left: 15px;
-        margin-top: -10px;
-        align-items: center;
-    }
-    .search-name p{
-        padding-top: 6px;
-        font-family: Merienda; 
-        color:rgb(0, 0, 0); 
-        font-size: medium;
-    }
-
-    .searched-items > .search-name {
-        
-        border-color: rgba(175, 109, 246, 0.8);
-        border-radius: 200px;
-        border-style: solid;
-        height: 40px;
-        min-width: 70px;
-        display: inline-block;
-        overflow-x: auto;
-        overflow-y: hidden;
-        flex-direction: horizontal;
-        border-radius: 10px;
-        color: #ffffff;
-    }
-</style>
-
-
+<!--Sorting by price part-->
 <div class="row">
-    <h2 style="position:sticky; text-transform:capitalize; margin-left: -150px;"><strong>{{tag.name}}s</strong></h2>
-    {% if current_filter.current_filters %}
-        <div class="brand-card d-md-block d-none" style="border-style:solid; 
-        margin-left: 300px; align-items: center; border-radius: 20px; 
-        background-color: lightblue ;height: 90px; flex-direction: horizontal; display: inline-block;">
-        <h2 style="position:sticky; text-transform:capitalize;
-        text-align: left; margin-top: 10px; margin-left: 12px; font-size: large;"><strong>Your filters: </strong></h2>
-            <div class="row">
-                {% for brand in current_filter.current_filters %}
-                    <nobr>
-                    <div class="searched-items col-md-12 d-md-block d-none">
-                        <div class="m-2 search-name">
-                            <p>{{brand}}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    {% endif %}
-
-    <div class="dropdown" style="left: 1200px; float:right; position: absolute">
+    <h2 style="position:sticky; text-transform:capitalize; margin-left: -150px;
+    font-size: x-large;"><strong>Search Result for: {{search_bar_entry}}</strong></h2>
+    <div class="dropdown" style="left:1520px; float:right; position: sticky;">
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Sort by
@@ -111,8 +58,6 @@
         clear: both;
         display: block;
         background-color: #009BFF;
-        border-color: rgb(0, 0, 0);
-        border-style: solid;
         border-radius: 4px;
     }
     .check::after {
@@ -182,32 +127,30 @@
     }
     
 </style>
-
-
+{% if all_search_results %}
 <div class="container-fluid" style="float: left;">
     <div class="col-3" style="float: left; margin-left: -200px; margin-right: 25px; 
-         background: lightblue; border-radius: 25px; border-style: solid; border-color: rgb(0, 0, 0);">
+         background: lightblue; border-radius: 25px; border-color: black; border-style: solid;">
         <nav class="col-md-2 d-none d-md-block">
             <div class="sidebar-sticky">
-                <h4 style="padding-top: 15px;">Companies</h4>
-                
-                <form action="#" method="GET">
-                {% for brand in brands %}
+                <h4 style="padding-top: 15px;">Categories</h4>
+                <br>
+                {% for tag in tags %}
                     <nobr>
-                    <input type="checkbox" id="{{brand}}" name="{{brand}}" class="checkbox" value="{{brand}}">
-                    <label for="{{brand}}">{{brand}}</label>
+                    <h4 style="text-transform: capitalize; font-family: Merienda; 
+                    font-size: large; color: black;">{{tag.name}}s</h4>
                     <br>
                 {% endfor %}
                 <br>
-                <input type="submit" value="Filter Results" formaction="" style="margin-bottom: 15px;">
-                <input type="submit" value="Reset" name="reset">
-                </form>
             </div>
         </nav>
     </div>
+{% else %}
+<h5>No search results found</h5>
+{% endif %}
 
     <div class="row">
-      {% for product in products %}
+      {% for product in all_search_results %}
           <div class="col-md-4 text-center">
               <div class="card" style="width: 18rem;">
                   <img class="thumbnail" src="{{product.image}}" style="margin: auto; display: block; 

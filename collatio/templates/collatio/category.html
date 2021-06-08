@@ -1,54 +1,27 @@
 {% extends 'collatio/main.html' %}
 {% load static %}
+{% static "images" as baseUrl %}
 {% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/card.css' %}">
+
 <br>
 <h1 style="text-align: center;"><strong>CATEGORIES</strong></h1>
 <br>
-<div class="row">
-	<div class="col-lg-4">
-        <a><img class="thumbnail" src="{% static 'images/placeholder.png' %}"></a>
-        <div class="box-element product">
-            <h6 style="text-align: center;"><strong>Category Name</strong></h6>    
+<div class="container">
+    <div class="row">
+    {% for tag in tags %}
+        <div class="col-md-4 text-center">
+                <div class="card">
+                    <a href="{% url 'search' tag.id %}">
+                        <img class="thumbnail" style="border-radius: 25px;" src="{{baseUrl}}/{{ tag.image }}">
+                    </a>
+                    <div class="nav-link">
+                        <h6 style="text-align: center;"><strong>Shop for {{ tag.name }}s</strong></h6>
+                    </div>
+                </div>
         </div>
+    {% endfor %}
     </div>
-
-	<div class="col-lg-4">
-        <a><img class="thumbnail" src="{% static 'images/placeholder.png' %}"></a>
-        <div class="box-element product">
-            <h6 style="text-align: center;"><strong>Category Name</strong></h6>    
-        </div>
-    </div>
-
-	<div class="col-lg-4">
-        <a><img class="thumbnail" src="{% static 'images/placeholder.png' %}"></a>
-        <div class="box-element product">
-            <h6 style="text-align: center;"><strong>Category Name</strong></h6>    
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<div class="row">
-	<div class="col-lg-4">
-        <a><img class="thumbnail" src="{% static 'images/placeholder.png' %}"></a>
-        <div class="box-element product">
-            <h6 style="text-align: center;"><strong>Category Name</strong></h6>    
-        </div>
-    </div>
-
-	<div class="col-lg-4">
-        <a><img class="thumbnail" src="{% static 'images/placeholder.png' %}"></a>
-        <div class="box-element product">
-            <h6 style="text-align: center;"><strong>Category Name</strong></h6>    
-        </div>
-    </div>
-
-	<div class="col-lg-4">
-        <a><img class="thumbnail" src="{% static 'images/placeholder.png' %}"></a>
-        <div class="box-element product">
-            <h6 style="text-align: center;"><strong>Category Name</strong></h6>    
-        </div>
-    </div>
-</div>
 
 {% endblock %}

@@ -25,7 +25,7 @@ SECRET_KEY = 'x9$^42cu#_(ks7*31p-(%&(@z)o&fe@3x8%g*6)4^30u2mh@f@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sancho1.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'collatio',
+
+    'django_filters',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +79,12 @@ WSGI_APPLICATION = 'pbl.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'FirstDataBase',
+        'USER': 'postgres',
+        'PASSWORD': 'collatioisthebest',
+        'HOST': 'localhost',
+        'PORT': '5432' 
     }
 }
 
