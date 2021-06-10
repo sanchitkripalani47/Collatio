@@ -20,3 +20,33 @@ Software Used
 - Web technology like HTML, CSS, Django and JavaScript.
 - Database - PostgreSQL
 
+## Website Snippets
+
+### Home Page
+
+<img src="https://github.com/sanchitkripalani47/Collatio/blob/main/Screenshots/Home%20Page.jpeg" width="700" height="400" />
+
+
+### Category Page
+
+<img src="https://github.com/sanchitkripalani47/Collatio/blob/main/Screenshots/Category%20Page.jpeg" width="700" height="400" />
+
+
+### Product Search By Category
+
+<img src="https://github.com/sanchitkripalani47/Collatio/blob/main/Screenshots/Product%20by%20Category%20(Search%20Page).jpeg" width="700" height="400" />
+
+
+### Filtered Results
+
+<img src="https://github.com/sanchitkripalani47/Collatio/blob/main/Screenshots/Filtered%20Results.jpeg" width="700" height="400" />
+
+
+### Search Query Results
+
+<img src="https://github.com/sanchitkripalani47/Collatio/blob/main/Screenshots/Search%20Query%20Results.JPG" width="700" height="400" />
+
+
+### Product Detail Page
+
+<img src="https://github.com/sanchitkripalani47/Collatio/blob/main/Screenshots/Product%20Detail%20Page.jpeg" width="700" height="400" />
